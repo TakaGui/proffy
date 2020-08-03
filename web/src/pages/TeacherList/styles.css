@@ -49,3 +49,50 @@
   font-weight: 700;
   line-height: 4.2rem;
 }
+
+#search-teachers {
+  margin-top: 3.2rem;
+}
+
+#search-teachers label {
+  color: var(--color-text-in-primary);
+}
+
+#search-teachers .input-block {
+  position: relative;
+}
+
+#search-teachers .input-block + .input-block {
+  margin-top: 1.4rem;
+}
+
+#search-teachers .input-block label {
+  font-size: 1.4rem;
+}
+
+#search-teachers .input-block input {
+  height: 5.6rem;
+  width: 100%;
+
+  margin-top: 0.8rem;
+  padding: 0 1.6rem;
+  
+  background-color: var(--color-input-background);
+  border: 1px solid var(--color-line-int-white);
+  border-radius: 0.8rem;
+  outline: 0;
+  
+  font-family: Archivo;
+  font-size: 1.6rem;
+}
+
+#search-teachers .input-block:focus-within::after {
+  width: calc(100% - 3.2rem);
+  height: 2px;
+  content: '';
+  background-color: var(--color-primary-light);
+  position: absolute;
+  left: 1.6rem;
+  right: 1.6rem;
+  bottom: 0;
+}
