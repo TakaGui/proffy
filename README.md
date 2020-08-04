@@ -31,7 +31,7 @@ A Rocketseat montou esse projeto tendo em vista o dia nacional do profissional d
   - Escolher entre estudar ou dar aulas.
   - Cadastrar o perfil para professores, como nome, biografia, informações sobre a aula e horários disponíveis.
   - Filtrar por matéria, dia da semana e horário.
-  - listar todos os professores que têm disponibilidade.
+  - Listar todos os professores que têm disponibilidade.
   - Entrar em contato com os professores.
 
 <a name="aplicação-mobile"></a>
@@ -80,6 +80,8 @@ Em ReactJS temos uma biblioteca chamada ReactDOM que faz com que o React consiga
 
 Componentes são funções que retornam um HTML, na maioria das vezes criamos componentes para podermos reaproveitar código entre várias telas, mantendo o código mais simples.
 
+Propriedades são atributos que são enviados para o componente.
+
 **Importante**: 
 - Nome do componente deve iniciar com letra maiúscula, caso contrário o react entenderá que é uma tag html.
 - Toda vez que for trabalhar com HTML dentro do TSX/JSX é obrigatório importar o React dentro do código.
@@ -91,12 +93,84 @@ Por exemplo, se o tamanho da fonte no root for 60% de 16px (tamanho padrão), es
 Trabalhar com essa unidade de medida permite alterar o tamanho de qualquer fonte, box e containers modificando apenas o valor no root.
 Isso também é importante para trabalhar com acessibilidade, principalmente quando o usuário tem controle sobre o tamanho da fonte.
 
-**Propriedades** são atributos que são enviados para o componente.
-
 <a name="back-end"></a>
 
 ### Back-end
 
+Como funciona o back-end?
+
+O Front-end envia uma requisição HTTP para o Back-end, dentro dessa mensagem terá algumas informações, geralmente essa requisição é formada por um cabeçalho e um corpo da mensagem.
+No **cabeçalho** há informações que definem o tipo da mensagem, como por exemplo: Criar alguma coisa, listar, editar ou excluir.
+
+O **corpo** da mensagem é o conteúdo da requisição, por exemplo o envio dos dados de um formulário de cadastro de usuário (nome, email, senha, avatar).
+
+O Back-end recebe essa mensagem e pode fazer algumas operações, por exemplo se ele está recebendo os dados de cadastro de um usuário, ele pode salvar o usuário no banco de dados, enviar um e-mail ao usuário, criptografar a senha do usuário, validar se o e-mail já está cadastrado.
+
+Essas são ações que acontencem no back-end porque são operações que precisam de credenciais do banco de dados, de acesso ao servidor, algoritmos de criptografia (HASH), ou seja são coisas que não podem estar no front-end (que é a parte visual, que aprece para o usuário, ele tem acesso a tudo que está no front-end).
+
+Depois de finalizar todas as operações, o back-end devolve uma resposta, e novamente uma resposta tem um cabeçalho e um corpo.
+
+Toda mensagem enviada entre front-end e back-end tem cabeçalho e corpo.
+
+**Construção de uma API RESTFUL**
+
+Ao invés do back-end retornar um HTML completo para o front-end (modelo Full MVC - Back-end com responsabilidade pela parte das entidades, controllers e visual da aplicação), o back-end retorna somente os dados necessários, por exemplo: se for feita uma requisição da lista de usuários, o back-end retornará um JSON (**J**ava**S**cript **O**bject **N**otation), dentro desse JSON há informações dos dados do usuário.
+
+Dessa forma, qualquer front-end pode entender a resposta do back-end, seja ele mobile ou web, e as próprias tecnologias (ReactJS, React Native, Kotlin, Swift, Flutter) farão a construção da parte visual, diferente do modelo Full MVC, em que somente aplicações web podem mandar requisições, pois nesse modelo é retornado dados HTML.
+
+**Por que Node.js?**
+
+Com o Node.JS é possível usar a mesma linguagem (JavaScript/Typescript) no Back-end que é utilizada no Front-end (ReactJS e React Native). 
+
+Além de ser uma tecnologia altamente performática, um dos pontos mais peculiares da arquitetura do Node é o Non-Blocking I/O.
+
+Non-Blocking I/O: Controle sobre assincronismo, ou seja é possível executar funcionalidades ao mesmo tempo, sem precisar esperar uma ação finalizar para realizar a próxima ação. 
+
+Streams: permite consumir dados aos poucos, é possível trabalhar com um dado antes de estar completo.
+
+Worker Threads: permite trabalhar com todos os cors da CPU de um processador para realizar ações diferentes dentro de um servidor Node.
+
+**Rotas e Recursos**
+
+Cada rota é um endereço da aplicação.
+
+Exemplo:
+
+Rota que lista usuários: http://localhost:3333/users
+
+Rota que lista contatos: http://localhost:3333/contacts
+
+Recurso é tudo o que fica depois do endereço principal (http://localhost:3333), ou seja no exemplo seria o "users" e "contacts".
+
+**Métodos HTTP**
+
+**GET**: Buscar uma ou mais informações do back-end. 
+
+**POST**: Criar uma nova informação no back-end. 
+
+**PUT**: Atualizar uma informação existente no back-end.
+
+**DELETE**: Remover uma informação do back-end.
+
+**Parâmetros**
+
+**Request Body**: Parâmetros para criação/atualização de informações.
+
+**Route Params**: Parâmetros que vem na própria rota que identificam um recurso.
+
+**Query Params**: Parâmetros que vêm na própria rota para filtros, paginação, geralemente são opcionais.
+
+**Knex**
+
+Knex é um query builder, ele permite escrever SQL usando Javascript.
+
+**Migrations**: 
+
+Controlam a versão do banco de dados.
+
+Dentro das migrations é descrito o que será feito no banco (Criar uma tabela nova, criar um campo novo, excluir um campo, alterar o tipo do campo).
+
+Ter esse controle ajuda um time no desenvolvimento das aplicações envolvendo o banco de dados, pois quando outra pessoa pegar o código, ela só vai precisar executar as migrations dentro do knex e automaticamente vai identificar o que já foi executado e o que não foi, e fará as alterações no banco.
 
 <a name="mobile"></a>
 
