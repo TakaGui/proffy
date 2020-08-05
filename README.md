@@ -78,9 +78,15 @@ O react é uma biblioteca estritamente Frontend, assim que a aplicação é carr
 
 Em ReactJS temos uma biblioteca chamada ReactDOM que faz com que o React consiga entender que a forma que ele precisa criar interfaces é com HTML.
 
-Componentes são funções que retornam um HTML, na maioria das vezes criamos componentes para podermos reaproveitar código entre várias telas, mantendo o código mais simples.
+**Componentes** são funções que retornam um HTML, na maioria das vezes criamos componentes para podermos reaproveitar código entre várias telas, mantendo o código mais simples.
 
-Propriedades são atributos que são enviados para o componente.
+**Propriedades** são atributos que são enviados para o componente.
+
+**Estados**: Sempre que precisar manipular algum valor através de uma ação do usuário, manipular um valor de dentro do componente, nós vamos criar um estado.<br>
+**Por que criar um estado?** Com o React, quando criamos uma interface, nós estamos criando uma interface de maneira declarativa, ou seja, a nossa interface é montada a partir do JavaScript (a partir das informações que ela recebe).<br>
+Quando usamos estado no React, nós não podemos manipular diretamente as variáveis do estado (imutabilidade), as variáveis não são modificáveis depois de criadas.<br>
+Para alterar alguma informação dentro do estado, usamos um [Hook do React](https://pt-br.reactjs.org/docs/hooks-state.html) chamado **useState**.<br>
+O useState retorna dois valores, a variável (que não pode ser alterada diretamente) e uma função que altera o valor dessa variável, e é com essa função que manipulamos as informações dentro do estado.
 
 **Importante**: 
 - Nome do componente deve iniciar com letra maiúscula, caso contrário o react entenderá que é uma tag html.
@@ -144,21 +150,16 @@ Recurso é tudo o que fica depois do endereço principal (http://localhost:3333)
 
 **Métodos HTTP**
 
-**GET**: Buscar uma ou mais informações do back-end. 
-
-**POST**: Criar uma nova informação no back-end. 
-
-**PUT**: Atualizar uma informação existente no back-end.
-
+**GET**: Buscar uma ou mais informações do back-end.<br>
+**POST**: Criar uma nova informação no back-end.<br>
+**PUT**: Atualizar uma informação existente no back-end.<br>
 **DELETE**: Remover uma informação do back-end.
 
 **Parâmetros**
 
-**Request Body**: Parâmetros para criação/atualização de informações.
-
-**Route Params**: Parâmetros que vem na própria rota que identificam um recurso.
-
-**Query Params**: Parâmetros que vêm na própria rota para filtros, paginação, geralemente são opcionais.
+**Request Body**: Parâmetros para criação/atualização de informações.<br>
+**Route Params**: Parâmetros que vem na própria rota que identificam um recurso.<br>
+**Query Params**: Parâmetros que vêm na própria rota para filtros, paginação, geralmente são opcionais.
 
 **Knex**
 
