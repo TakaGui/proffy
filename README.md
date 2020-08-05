@@ -175,6 +175,10 @@ Dentro das migrations é descrito o que será feito no banco (Criar uma tabela n
 
 Ter esse controle ajuda um time no desenvolvimento das aplicações envolvendo o banco de dados, pois quando outra pessoa pegar o código, ela só vai precisar executar as migrations dentro do knex e automaticamente vai identificar o que já foi executado e o que não foi, e fará as alterações no banco.
 
+**CORS**
+
+Permite que aplicações de endereços diferentes acesse a nossa API.
+
 <a name="mobile"></a>
 
 ### Mobile
