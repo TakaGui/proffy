@@ -62,7 +62,7 @@
   display: block;
 }
 
-.teacher-item footer button {
+.teacher-item footer a {
   height: 5.6rem;
   width: 20rem;
   
@@ -71,7 +71,7 @@
   
   border: 0;
   border-radius: 0.8rem;
-  cursor: pointer;
+  text-decoration: none;
   
   font-family: Archivo;
   font-size: 1.4rem;
@@ -84,7 +84,7 @@
   transition: 0.2s;
 }
 
-.teacher-item footer button:hover {
+.teacher-item footer a:hover {
   background-color: var(--color-secondary-dark);
 }
 
