@@ -31,6 +31,10 @@
     bottom: -24px;
   }
 
+  #search-teachers .input-block + .input-block {
+    margin-top: 0;
+  }
+
   #page-teacher-list main {
     max-width: 740px;
     margin: 0 auto;
