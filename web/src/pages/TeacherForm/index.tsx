@@ -1,4 +1,5 @@
 import React, { useState, FormEvent } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
@@ -11,6 +12,8 @@ import './styles.css';
 import api from '../../services/api';
 
 function TeacherForm() {
+  const history = useHistory();
+
   const [name, setName] = useState('');
   const [avatar, setAvatar] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
@@ -31,7 +34,7 @@ function TeacherForm() {
   }
 
   function setScheduleItemValue(position: number, field: string, value: string) {
-    const updateScheduleItems = scheduleItems.map((scheduleItem, index) => {
+    const updatedScheduleItems = scheduleItems.map((scheduleItem, index) => {
       if (index === position) {
         return { ...scheduleItem, [field]: value };
       }
@@ -39,7 +42,7 @@ function TeacherForm() {
       return scheduleItem;
     });
 
-    setScheduleItems(updateScheduleItems);
+    setScheduleItems(updatedScheduleItems);
   }
 
   function handleCreateClass(event: FormEvent) {
@@ -55,6 +58,8 @@ function TeacherForm() {
       schedule: scheduleItems,
     }).then(() => {
       alert('cadastro realizado com sucesso!');
+
+      history.push('/');
     }).catch(() => {
       alert('Erro no cadastro!');
     });
