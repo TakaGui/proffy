@@ -24,13 +24,29 @@ function TeacherForm() {
           <Input name="name" label="Nome completo" />
           <Input name="avatar" label="Avatar" />
           <Input name="whatsapp" label="WhatsApp" />
+          
           <Textarea name="bio" label="Biografia"></Textarea>
         </fieldset>
 
         <fieldset>
           <legend>Sobre a aula</legend>
           
-          <Select name="subject" label="Matéria" />
+          <Select
+            name="subject"
+            label="Matéria"
+            options={[
+              { value: 'Português', label: 'Português'},
+              { value: 'Matemática', label: 'Matemática'},
+              { value: 'Física', label: 'Física'},
+              { value: 'Química', label: 'Química'},
+              { value: 'Biologia', label: 'Biologia'},
+              { value: 'História', label: 'História'},
+              { value: 'Geografia', label: 'Geografia'},
+              { value: 'Educação Física', label: 'Educação Física'},
+              { value: 'Artes', label: 'Artes'},
+            ]}
+          />
+
           <Input name="cost" label="Custo da sua hora por aula" />
         </fieldset>
 
