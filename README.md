@@ -99,6 +99,8 @@ Por exemplo, se o tamanho da fonte no root for 60% de 16px (tamanho padrão), es
 Trabalhar com essa unidade de medida permite alterar o tamanho de qualquer fonte, box e containers modificando apenas o valor no root.
 Isso também é importante para trabalhar com acessibilidade, principalmente quando o usuário tem controle sobre o tamanho da fonte.
 
+E por fim, utilizamos o **axios**, que é uma biblioteca que serve para consumirmos APIs externas, basicamente conseguir fazer requisições para a API.
+
 <a name="back-end"></a>
 
 ### Back-end
