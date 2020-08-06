@@ -259,6 +259,15 @@ Exemplo:
 - logo@2x.png
 - logo@3x.png
 
+**Navegação**
+
+Nesse projeto utilizamos a biblioteca [React Navigation](https://reactnavigation.org/docs/getting-started).
+
+Existem vários tipos de navegação dentro do react native, as três mais comuns são:
+- Stack ou pilha: usada quando podemos navegar entre as telas (por exemplo, voltar para a tela anterior);
+- Tabs ou abas;
+- Drawer: geralmente é um menu lateral.
+
 - - -
 
 <a name="como-usar"></a>
