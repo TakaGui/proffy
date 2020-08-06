@@ -185,6 +185,70 @@ Permite que aplicações de endereços diferentes acesse a nossa API.
 
 A construção de interfaces no ReactNative é com interface nativa do IOS e do Android.
 
+Criar projeto utilizando o [Expo](https://docs.expo.io/).
+
+Se tiver algum problema com o expo, entre nesse [repositório](https://github.com/Rocketseat/expo-common-issues) da [Rocketseat](https://rocketseat.com.br/) que contém uma série de erros e suas soluções.
+
+Conseguimos reaproveitar grande parte da base de conhecimento adquirido com ReactJS no React Native, melhorando a produtividade.
+
+**Semelhanças entre React Native e ReactJS**<br>
+Temos um componente escrito da mesma forma que temos na Web, ou seja, temos funções que retornam um XML ou muito parecido com HTML (JSX/TSX).
+
+Toda a parte que aprendemos sobre componentização, lidar com estados, propriedades no ReactJS podem ser reaproveitados no react native.
+
+**Diferenças entre React Native e ReactJS**<br>
+Nós não usamos as tags do HTML (div, p, h1, section, main, entre outros), nós usamos componentes pré criados pelo pacote do react-native.<br>
+Por exemplo, temos a **View** que representa um bloco (semelhante as tag div, main, section, header, footer) e o **Text** que são todos os textos, não importa se é título, parágrafo, negrito.
+
+No mobile temos menos tipos de blocos diferentes (em comparação com a web), isso porque no mobile não temos elementos com resultado semântico. 
+
+```tsx
+export default function App() {
+  return (
+    <View>
+      <Text>Hello NLW!</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+```
+
+Como não tempos as tags semânticas como no HTML, controlamos os elementos com estilizações, porém não temos classes, ids ou o próprio css da maneira mais tradicional que vemos na web (não existem arquivos css no mobile).
+
+Para estilizar um elemento, usamos o StyleSheet que é importado do react-native. Podemos interpretar a criação da estilização como um objeto do javascript.
+
+**obs**: utilizando o stylesheet, teremos grande parte das propriedades do css e todos os elementos já vem com display flex por padrão, porém diferente da web, todos os elementos com display flex virão como colunas e não como linhas.
+
+```js
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+```
+
+Então aplicamos o container dentro do style de algum elemento.
+
+```tsx
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text>Hello NLW!</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+```
+
+Outra diferença é que no react-native, não temos heranças de estilos, se quiser estilizar uma tag/elemento, precisamos adicionar um estilo particular para aquele elemento.
+
+**Importante**
+Estilizações são objetos javascript, então não podemos utilizar um hífen na propriedade, então trocamos a próxima letra para maiúscula ao invés do hífen (CamelCase).<br>
+Exemplo: **background-color** para **backgroundColor**
+
 - - -
 
 <a name="como-usar"></a>
