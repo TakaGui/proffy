@@ -1,5 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Ionicons } from '@expo/vector-icons';
 
 import TeacherList from '../pages/TeacherList';
 import FavoritesTeacher from '../pages/FavoritesTeacher';
@@ -8,9 +9,59 @@ const { Navigator, Screen } = createBottomTabNavigator();
 
 function StudyTabs() {
   return (
-    <Navigator>
-      <Screen name="TeacherList" component={TeacherList} />
-      <Screen name="FavoritesTeacher" component={FavoritesTeacher} />
+    <Navigator
+      tabBarOptions={{
+        style: {
+          elevation: 0,
+          shadowOpacity: 0,
+          height: 64,
+        },
+        tabStyle: {
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+        },
+        iconStyle: {
+          flex: 0,
+          height: 20,
+          width: 20,
+        },
+        labelStyle: {
+          fontFamily: 'Archivo_700Bold',
+          fontSize: 13,
+          marginLeft: 16,
+        },
+        inactiveBackgroundColor: '#FAFAFC',
+        inactiveTintColor: '#C1BCCC',
+        activeBackgroundColor: '#EBEBF5',
+        activeTintColor: '#32264D',
+      }}
+    >
+      <Screen
+        name="TeacherList"
+        component={TeacherList}
+        options={{
+          tabBarLabel: 'Proffys',
+          tabBarIcon: ({ color, size }) => {
+            return (
+              <Ionicons name="ios-easel" color={color} size={size} />
+            );
+          },
+        }}
+      />
+
+      <Screen
+        name="FavoritesTeacher"
+        component={FavoritesTeacher}
+        options={{
+          tabBarLabel: 'Favoritos',
+          tabBarIcon: ({ color, size }) => {
+            return (
+              <Ionicons name="ios-heart" color={color} size={size} />
+            );
+          },
+        }}
+      />
     </Navigator>
   )
 }
