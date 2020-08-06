@@ -243,11 +243,21 @@ export default function App() {
 }
 ```
 
-Outra diferença é que no react-native, não temos heranças de estilos, se quiser estilizar uma tag/elemento, precisamos adicionar um estilo particular para aquele elemento.
+Outra diferença é que no react-native, não temos heranças de estilos, se quiser estilizar uma tag/elemento, precisamos adicionar um estilo particular para aquele elemento.<br>
+Obs: a tag Text é a única exceção dessa regra, se tiver um Text dentro do outro, o segundo Text vai herdar a estilização do primeiro.
 
 **Importante**
 Estilizações são objetos javascript, então não podemos utilizar um hífen na propriedade, então trocamos a próxima letra para maiúscula ao invés do hífen (CamelCase).<br>
 Exemplo: **background-color** para **backgroundColor**
+
+Quando trabalhamos com mobile, temos o conceito de densidade de pixel, isso quer dizer que pode caber muito mais pixels em uma tela, mesmo ela tendo a mesma resolução de uma outra tela.<br> 
+Por exemplo, uma tela de 1000px de largura, mas a densidade de pixel dessa tela é 3, dando um total de 3000px de largura, precisaremos de uma imagem 3 vezes maior.
+
+Então todas as imagens que utilizamos no react-native possuem no nome **@2x** **@3x** (sem **@** para o tamanho original) e o próprio react-native lida com isso automaticamente.<br>
+Exemplo:
+- logo.png
+- logo@2x.png
+- logo@3x.png
 
 - - -
 
