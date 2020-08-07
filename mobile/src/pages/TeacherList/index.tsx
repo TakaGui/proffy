@@ -10,6 +10,7 @@ import PageHeader from '../../components/PageHeader';
 import TeacherItem, { ITeacher } from '../../components/TeacherItem';
 
 import styles from './styles';
+import { useFocusEffect } from '@react-navigation/native';
 
 function TeacherList() {
   const [isFiltersVisible, setIsFiltersVisible] = useState(false);
@@ -33,6 +34,10 @@ function TeacherList() {
       }
     });
   }
+
+  useFocusEffect(() => {
+    loadFavorites();
+  });
 
   function handleToggleFiltersVisible() {
     setIsFiltersVisible(!isFiltersVisible);
