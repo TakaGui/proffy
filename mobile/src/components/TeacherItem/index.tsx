@@ -20,6 +20,7 @@ export interface ITeacher {
 
 interface ITeacherItemProps {
   teacher: ITeacher;
+  favorited: boolean;
 }
 
 const TeacherItem: React.FC<ITeacherItemProps> = ({ teacher }) => {
