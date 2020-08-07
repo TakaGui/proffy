@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { View, ScrollView, Text, TextInput } from 'react-native';
 
 import PageHeader from '../../components/PageHeader';
 import TeacherItem from '../../components/TeacherItem';
@@ -7,9 +7,42 @@ import TeacherItem from '../../components/TeacherItem';
 import styles from './styles';
 
 function TeacherList() {
+  const [isFiltersVisible, setIsFiltersVisible] = useState(false);
+
   return (
     <View style={styles.container}>
-      <PageHeader title="Proffys disponíveis" />
+      <PageHeader title="Proffys disponíveis">
+        { isFiltersVisible && (
+          <View style={styles.searchForm}>
+            <Text style={styles.label}>Matérias</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Qual a matéria?"
+              placeholderTextColor="#C1BCCC"
+            />
+          
+            <View style={styles.inputGroup}>
+              <View style={styles.inputBlock}>
+                <Text style={styles.label}>Dia da semana</Text>
+                <TextInput
+                  style={styles.input}
+                  placeholder="Qual o dia?"
+                  placeholderTextColor="#C1BCCC"
+                />
+              </View>
+
+              <View style={styles.inputBlock}>
+                <Text style={styles.label}>Horário</Text>
+                <TextInput
+                  style={styles.input}
+                  placeholder="Qual o horário?"
+                  placeholderTextColor="#C1BCCC"
+                />
+              </View>
+            </View>
+          </View>
+        )}
+      </PageHeader>
 
       <ScrollView
         style={styles.teacherList}
